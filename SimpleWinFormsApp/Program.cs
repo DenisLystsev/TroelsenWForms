@@ -19,6 +19,11 @@ namespace SimpleWinFormsApp
     //Главное окно
     class MainWindow : Form
     {
+        //Члены для простой системы меню
+        private MenuStrip MainMenu = new MenuStrip();
+        private ToolStripMenuItem tsmiFile = new ToolStripMenuItem();
+        private ToolStripMenuItem tsmiFileExit = new ToolStripMenuItem();
+
         public MainWindow() { }
         public MainWindow(string title, int width, int height)
         {
@@ -28,6 +33,23 @@ namespace SimpleWinFormsApp
 
             //Вывод в центре экрана
             CenterToScreen();
+
+            //Создаем систему меню
+            BuildMenuSystem();
+        }
+
+        private void BuildMenuSystem()
+        {
+            //Добавить в главное меню пункт Файл
+            tsmiFile.Text = "Файл";
+            MainMenu.Items.Add(tsmiFile);
+            //Добавить в меню Файл пункт Выход
+            tsmiFileExit.Text = "Выход";
+            tsmiFile.DropDownItems.Add(tsmiFileExit);
+            tsmiFileExit.Click += (o, s) => Application.Exit();
+            //Установить меню для этой формы
+            Controls.Add(this.MainMenu);
+            MainMenuStrip = this.MainMenu;
         }
     }
 }

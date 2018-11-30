@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace SimpleWinFormsApp
 {
-    //c 5
+    //c 7
     class Program
     {
         static void Main(string[] args)

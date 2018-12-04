@@ -8,6 +8,7 @@ namespace SimpleVSWinFormsApp
 {
     static class Program
     {
+        //с 14
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>
@@ -16,7 +17,7 @@ namespace SimpleVSWinFormsApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new MainWindow());
         }
     }
 }
